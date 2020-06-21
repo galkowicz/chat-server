@@ -1,0 +1,5 @@
+{
+    "env": {
+        "MYSQL_DEFAULT_DB": "any-clip"
+    }
+}

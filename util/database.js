@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('any-clip', 'root', '', {
+const sequelize = new Sequelize(process.env.MYSQL_DEFAULT_DB, 'root', '', {
   dialect: 'mysql',
   host: 'localhost',
 })

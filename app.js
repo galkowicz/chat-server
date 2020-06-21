@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const helmet = require('helmet')
 const bodyParser = require('body-parser')
 
 const mainRoutes = require('./routes/main')
@@ -41,6 +42,7 @@ io.on('connection', (socket) => {
   })
 })
 
+app.use(helmet())
 app.use(bodyParser.json())
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -55,11 +57,9 @@ app.use(mainRoutes)
 Message.belongsTo(User, { constraints: true, onDelete: 'CASCADE' })
 User.hasMany(Message)
 sequelize
-  //   .sync() TODO change back to this
-  .sync({ force: true })
+  .sync()
   .then((result) => {
-    console.log('starting....')
-    server.listen(5000)
+    server.listen(process.env.PORT || 3000)
   })
   .catch((err) => {
     console.log('err: ', err)
