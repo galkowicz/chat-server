@@ -59,7 +59,7 @@ User.hasMany(Message)
 sequelize
   .sync()
   .then((result) => {
-    server.listen(process.env.PORT || 3000)
+    server.listen(process.env.PORT || 5000)
   })
   .catch((err) => {
     console.log('err: ', err)
