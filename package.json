@@ -23,6 +23,6 @@
     "helmet": "^3.23.1",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.13",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.5.0"
   }
 }
